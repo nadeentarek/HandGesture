@@ -41,12 +41,12 @@ from aiy.vision.inference import CameraInference
 from aiy.vision.inference import ImageInference
 from aiy.vision.inference import ModelDescriptor
 from gpiozero import Button
-from aiy.vision.pins import BUTTON_GPIO_PIN
-from aiy.vision.leds import Leds
+from aiy.pins import BUTTON_GPIO_PIN
+from aiy.leds import Leds
 from gpiozero import LED
-from aiy.vision.pins import PIN_A
-from aiy.vision.pins import PIN_B
-from aiy.vision.pins import PIN_C
+from aiy.pins import PIN_A
+from aiy.pins import PIN_B
+from aiy.pins import PIN_C
 import aiy.toneplayer
 
 # Initialize the GPIO pins A,B,C
