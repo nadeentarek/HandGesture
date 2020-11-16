@@ -434,8 +434,10 @@ def main():
                 pinStatus(pin_C,'LOW',args.gpio_logic)
                 leds.update(Leds.rgb_on(GREEN))
                 face_box = detect_face()
+                print("Entered the loop of face classifier")
                 hand_box_params = determine_hand_box_params(face_box)
                 if image_boundary_check(hand_box_params):
+                    print("Hand gesture identified")
                     break
 
             # Start hand classifier
@@ -444,6 +446,7 @@ def main():
             start_timer = time.time()
             with ImageInference(model) as img_inference:
                 while True:
+                    print("Entered the loop of gesture classifier")
                     #check_termination_trigger()
                     if is_active:
                         leds.update(Leds.rgb_on(RED))
