@@ -299,7 +299,7 @@ def detect_face():
         counter = 1
         x_history, y_history, w_history, h_history = [], [], [], []
         for result in camera_inference.run():
-            check_termination_trigger()
+            #check_termination_trigger()
             faces = face_detection.get_faces(result)
             face = select_face(faces)
             if face:
@@ -317,12 +317,12 @@ def detect_face():
         return face_box  
 
 # Shutdown Google Vision  AIY kit if termination trigger is activated (button pressed) 
-def check_termination_trigger():
-    if button.is_pressed:
-        print('Terinating session...')
-        leds.update(Leds.rgb_off())
-        time.sleep(5)
-        os.system("sudo shutdown -h now") 
+#def check_termination_trigger():
+    #if button.is_pressed:
+        #print('Terinating session...')
+        #leds.update(Leds.rgb_off())
+        #time.sleep(5)
+        #os.system("sudo shutdown -h now") 
 
 # Determine locations and size of hand box
 def determine_hand_box_params(face_box):
@@ -444,7 +444,7 @@ def main():
             start_timer = time.time()
             with ImageInference(model) as img_inference:
                 while True:
-                    check_termination_trigger()
+                    #check_termination_trigger()
                     if is_active:
                         leds.update(Leds.rgb_on(RED))
                     hands_image = capture_hands_image(camera,hand_box_params)
